@@ -1,8 +1,8 @@
 import streamlit as st
 
 # Import the other pages
-import visual
 import predict
+import visual
 import output
 
 # Sidebar menu
