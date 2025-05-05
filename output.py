@@ -7,9 +7,9 @@ def app():
     st.write("This is the Output section.")
 
 
-if "df_pred" not in st.session_state:
-    st.warning("⚠️ Please run a prediction first on the 'Predict' page.")
-    st.stop()
+# if "df_pred" not in st.session_state:
+#     st.warning("⚠️ Please run a prediction first on the 'Predict' page.")
+#     st.stop()
 
 # Simulate loading prediction (in real use, share data using session_state)
 try:

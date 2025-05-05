@@ -12,10 +12,19 @@ def app():
     st.write("This is the Predict section.")
 
 ticker = st.text_input("Enter Stock Ticker (e.g., AAPL)")
+
 if ticker:
     df = yf.download(ticker, period="3y")
-    df_close = df[["Close"]]
-    st.line_chart(df_close)
+
+    # ✅ Fix for MultiIndex columns
+    if isinstance(df.columns, pd.MultiIndex):
+        df.columns = [col[0] for col in df.columns]
+
+    if "Close" not in df.columns:
+        st.error("❌ 'Close' column not found in data.")
+    else:
+        df_close = df[["Close"]]
+        st.line_chart(df_close)
 
     data = df_close.values
     scaler = MinMaxScaler()
