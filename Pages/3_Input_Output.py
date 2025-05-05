@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 
 st.title("💰 Investment Estimator")
+if "df_pred" not in st.session_state:
+    st.warning("⚠️ Please run a prediction first on the 'Predict' page.")
+    st.stop()
 
 # Simulate loading prediction (in real use, share data using session_state)
 try:

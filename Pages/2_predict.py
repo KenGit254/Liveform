@@ -38,4 +38,5 @@ if ticker:
 
     df_pred = df_close.iloc[60:].copy()
     df_pred["Predicted"] = predicted_prices
+    st.session_state["df_pred"] = df_pred
     st.line_chart(df_pred)
