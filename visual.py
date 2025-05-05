@@ -3,7 +3,10 @@ import yfinance as yf
 import pandas as pd
 import requests
 
-st.title("📊 Visuals - Customer Stocks")
+#st.title("📊 Visuals - Customer Stocks")
+def app():
+    st.title("📊 Visuals - Customer Stocks")
+    st.write("This is the Visuals section.")
 
 def get_ticker(company_name, api_key):
     base_url = "https://www.alphavantage.co/query"

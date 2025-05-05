@@ -6,7 +6,10 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import GRU, Dense
 import yfinance as yf
 
-st.title("🔮 Predict Stock Prices (GRU)")
+# st.title("🔮 Predict Stock Prices (GRU)")
+def app():
+    st.title("Predict Page")
+    st.write("This is the Predict section.")
 
 ticker = st.text_input("Enter Stock Ticker (e.g., AAPL)")
 if ticker:

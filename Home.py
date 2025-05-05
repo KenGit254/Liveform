@@ -1,5 +1,21 @@
 import streamlit as st
 
-st.set_page_config(page_title="KenGit App", layout="centered")
-st.title("📈 KenGit Asset Allocation App")
-st.markdown("Welcome! Navigate using the sidebar to: \n- View visuals\n- Predict stock prices\n- Estimate your returns.")
+# Import the other pages
+import visual
+import predict
+import output
+
+# Sidebar menu
+st.sidebar.title("Navigation")
+menu = st.sidebar.radio("Go to", ["Home", "Visuals", "Predict", "Output"])
+
+# Page logic
+if menu == "Home":
+    st.title("Welcome to the Streamlit App")
+    st.write("Use the sidebar to navigate to different sections.")
+elif menu == "Visuals":
+    visual.app()
+elif menu == "Predict":
+    predict.app()
+elif menu == "Output":
+    output.app()

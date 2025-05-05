@@ -1,7 +1,12 @@
 import streamlit as st
 import pandas as pd
 
-st.title("💰 Investment Estimator")
+# st.title("💰 Investment Estimator")
+def app():
+    st.title("Output Page")
+    st.write("This is the Output section.")
+
+
 if "df_pred" not in st.session_state:
     st.warning("⚠️ Please run a prediction first on the 'Predict' page.")
     st.stop()
